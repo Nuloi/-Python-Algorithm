@@ -24,5 +24,11 @@ dfs(l)
 
 num.extend([0]*(n-len(num)))
 
-for i in range(n):
-    print(num[i])
+
+count=0
+for k in range(1,4):
+    for i in range(n):
+        for j in range(m):
+            if dfs(i,j,k)==True:
+                count+=1
+print(count)
