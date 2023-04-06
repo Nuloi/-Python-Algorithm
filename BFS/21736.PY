@@ -13,6 +13,7 @@ def bfs(start, campus, visited):
                 visited[nx][ny] = True
                 if campus[nx][ny] == 'P':
                     people_count += 1
+                    q.append((nx, ny))
                 elif campus[nx][ny] == 'O':
                     q.append((nx, ny))
 
@@ -24,7 +25,7 @@ visited = [[False] * m for _ in range(n)]
 
 for i in range(n):
     for j in range(m):
-        if campus[i][j] == 'I':
+        if campus[i][j] == 'I':#도현이 위치
             start = (i, j)
 
 result = bfs(start, campus, visited)
